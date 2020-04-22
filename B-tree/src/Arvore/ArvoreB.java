@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class ArvoreB {
 
 	//Atributos da Classe ArvoreB
-    private No raiz; //Atributo do NÛ raiz;
+    private No raiz; //Atributo do N√≥ raiz;
     private int ordem; //Ordem da Arvore-B;
     private int nElementos; //Contador para a quantidade de elementos na arvore B;
 
@@ -34,7 +34,7 @@ public class ArvoreB {
         return raiz;
     }
 
-    //Metodo de InserÁ„o
+    //Metodo de Inser√ß√£o
     //parametros: k - chave a ser inserida
     public void insere(int k) {
         if (BuscaChave(raiz, k) == null) { 
@@ -60,8 +60,8 @@ public class ArvoreB {
         }
     }
 
-    //MÈtodo de busca de uma chave
-    //Par‚metros: X - nÛ por onde comeÁar a busca, k - chave a ser buscada
+    //M√©todo de busca de uma chave
+    //Par√¢metros: X - n√≥ por onde come√ßar a busca, k - chave a ser buscada
     public No BuscaChave(No X, int k) {
         int i = 1;
         while ((i <= X.getN()) && (k > X.getChave().get(i - 1))) { 
@@ -77,8 +77,8 @@ public class ArvoreB {
         }
     }
 
-    //MÈtodo de divis„o de nÛ
-    //Par‚metros: x - nÛ Pai, y - nÛ Filho e i - Ìndice i que indica que y È o i-Èsimo filho de x.
+    //M√©todo de divis√£o de n√≥
+    //Par√¢metros: x - n√≥ Pai, y - n√≥ Filho e i - √≠ndice i que indica que y √© o i-√©simo filho de x.
     public void divideNo(No x, int i, No y) {
         int t = (int) Math.floor((ordem - 1) / 2);
         No z = new No(ordem);
@@ -128,8 +128,8 @@ public class ArvoreB {
         x.setN(x.getN() + 1);
     }
 
-    //MÈtodo para inserir uma chave em um nÛ n„o cheio
-    //Pa‚metros: x - nÛ a ser inserido, k - chave a ser inserida no nÛ x
+    //M√©todo para inserir uma chave em um n√≥ n√£o cheio
+    //Pa√¢metros: x - n√≥ a ser inserido, k - chave a ser inserida no n√≥ x
     public void insereNoNaoCheio(No x, int k) {
         int i = x.getN() - 1;
         if (x.isFolha()) {
@@ -157,7 +157,7 @@ public class ArvoreB {
 
     }
 
-    //MÈtodo de RemoÁ„o de uma determinada chave da arvoreB
+    //M√©todo de Remo√ß√£o de uma determinada chave da arvoreB
     public void Remove(int k) {
         if (BuscaChave(this.raiz, k) != null) {
             No N = BuscaChave(this.raiz, k);
@@ -186,8 +186,8 @@ public class ArvoreB {
         }
     }
 
-    //MÈtode de Balancear um nÛ folha
-    //Par‚metros: F - nÛ Folha a ser balanceada
+    //M√©tode de Balancear um n√≥ folha
+    //Par√¢metros: F - n√≥ Folha a ser balanceada
     private void Balanceia_Folha(No F) {
         if (F.getN() < Math.floor((ordem - 1) / 2)) {
             No P = getPai(raiz, F);
@@ -209,8 +209,8 @@ public class ArvoreB {
         }
     }
 
-    //MÈtodo para diminuir a altura
-    //Par‚metros: X - nÛ onde vai ser diminuido a altura
+    //M√©todo para diminuir a altura
+    //Par√¢metros: X - n√≥ onde vai ser diminuido a altura
     private void Diminui_Altura(No X) {
         int j;
         No P = new No(ordem);
@@ -240,8 +240,8 @@ public class ArvoreB {
         }
     }
 
-    //MÛtodo de Balancear da esquerda para a direita
-    //Par‚metros: P - NÛ pai, e - indica que Esq È o e-Èsimo filho de P, Esq - NÛ da esquerda, Dir - NÛ da direita
+    //M√≥todo de Balancear da esquerda para a direita
+    //Par√¢metros: P - N√≥ pai, e - indica que Esq √© o e-√©simo filho de P, Esq - N√≥ da esquerda, Dir - N√≥ da direita
     private void Balanceia_Esq_Dir(No P, int e, No Esq, No Dir) {
         for (int i = 0; i < Dir.getN(); i++) {
             Dir.getChave().set(i + 1, Dir.getChave().get(i));
@@ -259,8 +259,8 @@ public class ArvoreB {
         Esq.setN(Esq.getN() - 1);
     }
     
-    //MÈtodo de Balancear da direita para a esquerda
-    //Par‚metros: P - NÛ pai, e - indica que Dir È o e-Èsimo filho de P, Dir - NÛ da direita, Esq - NÛ da esquerda
+    //M√©todo de Balancear da direita para a esquerda
+    //Par√¢metros: P - N√≥ pai, e - indica que Dir √© o e-√©simo filho de P, Dir - N√≥ da direita, Esq - N√≥ da esquerda
     private void Balanceia_Dir_Esq(No P, int e, No Dir, No Esq) {
 
         Esq.setN(Esq.getN() + 1);
@@ -281,8 +281,8 @@ public class ArvoreB {
         Dir.setN(Dir.getN() - 1);
     }
 
-     //MÈtodo para junÁ„o do nÛ
-    //Par‚metros: X - No pai, i - posicao do filho de X onde vai ser juntado
+     //M√©todo para jun√ß√£o do n√≥
+    //Par√¢metros: X - No pai, i - posicao do filho de X onde vai ser juntado
     private void Juncao_No(No X, int i) {
         No Y = X.getFilho().get(i - 1); 
         No Z = X.getFilho().get(i);
@@ -323,8 +323,8 @@ public class ArvoreB {
         }
     }
     
-    //Metodo que retorna o nÛ pai de N
-    //Par‚metros: T - NÛ onde comeÁa a busca, N - nÛ que deve se buscar o pai
+    //Metodo que retorna o n√≥ pai de N
+    //Par√¢metros: T - N√≥ onde come√ßa a busca, N - n√≥ que deve se buscar o pai
     private No getPai(No T, No N) {
         if (this.raiz == N) {
             return null;
@@ -343,18 +343,18 @@ public class ArvoreB {
         return null;
     }
     
-    //mÈtodo para percorrer a ·rvore por nÌvel
-  	public void percorreNivel(ArvoreB aux) {
-  		LinkedList<ArvoreB> fila = new LinkedList<ArvoreB>();
-  		fila.add(aux);
+//m√©todo para percorrer a √°rvore por n√≠vel
+  public void percorreNivel(ArvoreB aux) {
+  	LinkedList<ArvoreB> fila = new LinkedList<ArvoreB>();
+  	fila.add(aux);
   		
-  		int cont = 0;
-  		while(fila.size() != 0) {
-  			cont++;
-  			ArvoreB r = fila.remove();
-  			System.out.println(" " + r.getRaiz().getChave());
-  			if(r.getRaiz().getFilho() != null)
-  				System.out.println(" " + r.getRaiz().getFilho().get(cont).getChave());
-  		}
-  	}
+  	int cont = 0;
+  	while(fila.size() != 0) {
+  		cont++;
+  		ArvoreB r = fila.remove();
+  		System.out.println(" " + r.getRaiz().getChave());
+  		if(r.getRaiz().getFilho() != null)
+  			System.out.println(" " + r.getRaiz().getFilho().get(cont).getChave());
+  	}	
+  }
 }
