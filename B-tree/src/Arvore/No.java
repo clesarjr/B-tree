@@ -4,10 +4,10 @@ import java.util.Vector;
 
 public class No {
 
-	private int n; //Atributo que guarda a quantidade de chaves no nó
+	private int n; //Atributo que guarda a quantidade de chaves no nÃ³
     private Vector<Integer> chave; //vetor das chaves
     private Vector<No> filho;//vetor dos filhos
-    private boolean folha;//Atributo que indica se a nó eh folha ou nao           
+    private boolean folha;//Atributo que indica se a nÃ³ eh folha ou nao           
 
     public No(int n) {
         this.chave = new Vector<Integer>(n - 1);
@@ -22,7 +22,7 @@ public class No {
         this.n = 0;
     }
     
-    //set e get
+    //set e get 
     public Vector<Integer> getChave() {
         return chave;
     }
