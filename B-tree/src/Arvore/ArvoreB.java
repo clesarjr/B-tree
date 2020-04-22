@@ -1,5 +1,8 @@
 package Arvore;
 
+import java.util.Collection;
+import java.util.LinkedList;
+
 public class ArvoreB {
 
 	//Atributos da Classe ArvoreB
@@ -339,4 +342,19 @@ public class ArvoreB {
         }
         return null;
     }
+    
+    //método para percorrer a árvore por nível
+  	public void percorreNivel(ArvoreB aux) {
+  		LinkedList<ArvoreB> fila = new LinkedList<ArvoreB>();
+  		fila.add(aux);
+  		
+  		int cont = 0;
+  		while(fila.size() != 0) {
+  			cont++;
+  			ArvoreB r = fila.remove();
+  			System.out.println(" " + r.getRaiz().getChave());
+  			if(r.getRaiz().getFilho() != null)
+  				System.out.println(" " + r.getRaiz().getFilho().get(cont).getChave());
+  		}
+  	}
 }

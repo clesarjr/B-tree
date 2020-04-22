@@ -8,8 +8,6 @@ public class No {
     private Vector<Integer> chave; //vetor das chaves
     private Vector<No> filho;//vetor dos filhos
     private boolean folha;//Atributo que indica se a nó eh folha ou nao           
-    final int DIFERENCA_ALTURA = 30;
-    final int DIFERENCA_IRMAOS = 5;
 
     public No(int n) {
         this.chave = new Vector<Integer>(n - 1);
